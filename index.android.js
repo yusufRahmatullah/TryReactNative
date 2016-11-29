@@ -7,50 +7,22 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  ScrollView,
-  ListView,
-  Navigator
 } from 'react-native';
 
 import PhaseOne from './App/Tutorial/PhaseOne'
 import PhaseTwo from './App/Tutorial/PhaseTwo'
 import PhaseThree from './App/Tutorial/PhaseThree'
+import PhaseFour from './App/Tutorial/PhaseFour'
 
 export default class TryReact extends Component {
   render() {
     return (
-      // <PhaseOne />
-      // <PhaseTwo />
-      // <PhaseThree />
-      <Navigator 
-        initialRoute = {{ title: 'First Scene', index : 0 }}
-        renderScene = {(route, navigator) => 
-          <PhaseThree 
-            title = {route.title}            
-            onForward = {() => {
-              const nextIndex = route.index + 1;
-              navigator.push({
-                title: 'Second Scene',
-                index: nextIndex,
-              });
-            }}
-
-            onBack = {() => {
-              if (route.index > 0) {
-                navigator.pop();
-              }
-            }}
-          />
-        }
-      />
+      // <PhaseOne /> // Blink Text
+      // <PhaseTwo /> // View Styling
+      // <PhaseThree /> // List, Data fetch, ScrollView
+      <PhaseFour /> // Navigator, Image
     );
   }
 }
 
 AppRegistry.registerComponent('TryReact', () => TryReact);
-
-const API_URL = 'http://10.0.2.2:5000/user/';

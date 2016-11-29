@@ -11,6 +11,7 @@ import {
   Text,
   TextInput,
   View,
+  Image,
   ScrollView,
   ListView,
   TouchableHighlight
@@ -74,6 +75,11 @@ export default class PhaseThree extends Component {
           <Text style={{padding: 10, fontSize: 42}}>
             {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
           </Text>
+          <View style={{ justifyContent: 'center', alignItems: 'center'}}>
+            <Image source={{ uri: 'https://unsplash.it/200/?random'}} style={{
+              width:200, height:200, borderRadius:100
+            }} />
+          </View>
           <ListView 
             dataSource = {this.state.dataSource}
             renderRow = {(rowData) => <Text>{rowData}</Text>} />
